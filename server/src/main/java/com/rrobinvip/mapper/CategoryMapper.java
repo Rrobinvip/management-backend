@@ -1,6 +1,7 @@
 package com.rrobinvip.mapper;
 
 import com.github.pagehelper.Page;
+import com.rrobinvip.annotation.AutoFill;
 import com.rrobinvip.enumeration.OperationType;
 import com.rrobinvip.dto.CategoryPageQueryDTO;
 import com.rrobinvip.entity.Category;
@@ -21,6 +22,7 @@ public interface CategoryMapper {
     @Insert("insert into category(type, name, sort, status, create_time, update_time, create_user, update_user)" +
             " VALUES" +
             " (#{type}, #{name}, #{sort}, #{status}, #{createTime}, #{updateTime}, #{createUser}, #{updateUser})")
+    @AutoFill(value = OperationType.INSERT)
     int addCategory(Category category);
 
     /**
@@ -44,6 +46,7 @@ public interface CategoryMapper {
      *
      * @param category Category entity
      */
+    @AutoFill(value = OperationType.UPDATE)
     int update(Category category);
 
     /**

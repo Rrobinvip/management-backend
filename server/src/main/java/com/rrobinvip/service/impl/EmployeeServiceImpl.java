@@ -95,13 +95,6 @@ public class EmployeeServiceImpl implements EmployeeService {
         String rawPassword = employee.getPassword() == null ? PasswordConstant.DEFAULT_PASSWORD : employee.getPassword();
         employee.setPassword(pwEncoder.encode(rawPassword));
 
-        employee.setCreateTime(LocalDateTime.now());
-        employee.setUpdateTime(LocalDateTime.now());
-
-        // BaseContext is an encapsulation of ThreadLocal.
-        employee.setCreateUser(BaseContext.getCurrentId());
-        employee.setUpdateUser(BaseContext.getCurrentId());
-
         return employeeMapper.addEmployee(employee);
     }
 
@@ -159,9 +152,6 @@ public class EmployeeServiceImpl implements EmployeeService {
     public int updateEmployeeInfo(EmployeeDTO employeeDTO) {
         Employee employee = new Employee();
         BeanUtils.copyProperties(employeeDTO, employee);
-
-        employee.setUpdateTime(LocalDateTime.now());
-        employee.setUpdateUser(BaseContext.getCurrentId());
 
         return employeeMapper.updateEmployee(employee);
     }

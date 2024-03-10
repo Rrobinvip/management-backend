@@ -9,11 +9,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;
 
 @SpringBootApplication
-@EnableTransactionManagement //开启注解方式的事务管理
+@EnableTransactionManagement // manage transactions accordingly
 @Slf4j
 public class BMApplication {
     public static void main(String[] args) {
         SpringApplication.run(BMApplication.class, args);
-        log.info("server started");
+        log.info("Server started");
     }
 }

@@ -1,8 +1,10 @@
 package com.rrobinvip.mapper;
 
 import com.github.pagehelper.Page;
+import com.rrobinvip.annotation.AutoFill;
 import com.rrobinvip.dto.EmployeePageQueryDTO;
 import com.rrobinvip.entity.Employee;
+import com.rrobinvip.enumeration.OperationType;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -40,6 +42,7 @@ public interface EmployeeMapper {
     @Insert("insert into employee (name, username, password, phone, sex, id_number, status,  create_time, update_time, create_user, update_user)" +
             "values " +
             "(#{name}, #{username}, #{password}, #{phone}, #{sex}, #{idNumber}, #{status}, #{createTime}, #{updateTime}, #{createUser}, #{updateUser})")
+    @AutoFill(value = OperationType.INSERT)
     int addEmployee(Employee employee);
 
     /**
@@ -56,5 +59,6 @@ public interface EmployeeMapper {
      * @param employee Employee entity
      * @return rows affected
      */
+    @AutoFill(value = OperationType.UPDATE)
     int updateEmployee(Employee employee);
 }
