@@ -23,7 +23,7 @@ public class ItemDTO implements Serializable {
     private String description;
     // 1-enable, 2-disable
     private Integer status;
-    //口味
-    private List<ItemOptions> flavors = new ArrayList<>();
+    // item options
+    private List<ItemOptions> options = new ArrayList<>();
 
 }

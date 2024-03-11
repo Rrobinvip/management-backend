@@ -5,5 +5,4 @@
 *Test.java
 **/test/
 .env
-**/application.yml
 **/application-dev.yml
