@@ -24,6 +24,6 @@ public class ItemDTO implements Serializable {
     // 1-enable, 2-disable
     private Integer status;
     // item options
-    private List<ItemOptions> options = new ArrayList<>();
+    private List<ItemOptions> flavors = new ArrayList<>();
 
 }

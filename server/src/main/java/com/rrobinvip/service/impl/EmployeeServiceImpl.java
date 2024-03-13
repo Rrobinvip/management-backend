@@ -5,7 +5,6 @@ import com.github.pagehelper.PageHelper;
 import com.rrobinvip.constant.MessageConstant;
 import com.rrobinvip.constant.PasswordConstant;
 import com.rrobinvip.constant.StatusConstant;
-import com.rrobinvip.context.BaseContext;
 import com.rrobinvip.dto.EmployeeDTO;
 import com.rrobinvip.dto.EmployeeLoginDTO;
 import com.rrobinvip.dto.EmployeePageQueryDTO;
@@ -16,6 +15,7 @@ import com.rrobinvip.exception.PasswordErrorException;
 import com.rrobinvip.mapper.EmployeeMapper;
 import com.rrobinvip.result.PageResult;
 import com.rrobinvip.service.EmployeeService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -25,6 +25,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 @Service
+@Slf4j
 public class EmployeeServiceImpl implements EmployeeService {
 
     @Autowired

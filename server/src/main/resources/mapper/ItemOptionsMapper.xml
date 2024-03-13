@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.rrobinvip.mapper.ItemOptionsMapper">
+    <insert id="addItemOptionsBatch">
+        insert into item_options (item_id, name, value) values
+        <foreach collection="options" item="option" separator=",">
+            (#{option.itemId}, #{option.name}, #{option.value})
+        </foreach>
+    </insert>
+
+
+</mapper>

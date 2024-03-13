@@ -8,7 +8,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Custom annotation, notify autofill on some public fields
+ * Custom annotation, notify autofill on some public fields (createTime, updateTime, createUser, updateUser)
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)

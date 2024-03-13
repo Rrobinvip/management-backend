@@ -39,6 +39,9 @@ It's recommended to reverse proxy the request to admin to hide the real API url.
 `/swagger-ui/` To view all implemented API, and perform test. (Not recommend to test with swagger, it can not handle
 complex requests. Use postman.)
 
+**ISSUE:** Swagger-ui is currently having conflict with Jackson HTTP message converter, see comments
+in `WebMvcConfiguration.extendMessageConverters` for details on enabling swagger.
+
 ### Employee management
 
 These API endpoints are designed to perform employee management.
@@ -52,6 +55,13 @@ These API endpoints are designed to perform employee management.
 6. `GET /admin/employee/{id}` Query employee based on ID. QueryParameter: id
 7. `PUT /admin/employee` Update employee info (value can be null, which means only little info been updated.).
    RequestBody: name, username, phone, gender, idNumber
+
+### Item management
+
+These API endpoints are designed to perform item management.
+
+1. `POST /admin/item` Add a new item. RequestBody: name, categoryId, price, image(url), description, status, options (
+   json obj, contains itemId, name, value)
 
 ### Category management
 
